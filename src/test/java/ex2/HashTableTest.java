@@ -1,5 +1,6 @@
-package ex1;
+package ex2;
 
+import ex1.HashTable;
 import org.junit.jupiter.api.Assertions;
 
 
@@ -8,7 +9,7 @@ class HashTableTest {
     //Demuestro que el ITEMS++ puede sumar cuando introduzco valores
     @org.junit.jupiter.api.Test
     void count() {
-        HashTable hashTable = new HashTable();
+        ex1.HashTable hashTable = new ex1.HashTable();
         hashTable.put("22", "30");
         hashTable.put("45", "51");
         Assertions.assertEquals(2, hashTable.count());
@@ -17,23 +18,23 @@ class HashTableTest {
     //Si meto una fila diferente a 16 el codigo peta
     @org.junit.jupiter.api.Test
     void size() {
-        HashTable hashTable = new HashTable();
+        ex1.HashTable hashTable = new ex1.HashTable();
         Assertions.assertEquals(16, hashTable.size());
     }
 
     //cuando introduzco el mismo valor veo que reemplaza al otro
     @org.junit.jupiter.api.Test
     void put() {
-        HashTable hashTable = new HashTable();
+        ex1.HashTable hashTable = new ex1.HashTable();
         hashTable.put("hola", "a");
         hashTable.put("hola", "b");
-        Assertions.assertEquals("hola",hashTable.toString());
+        Assertions.assertEquals("\n bucket[12] = [hola, b]",hashTable.toString());
     }
 
     //Creo un valor y busco si esta en la misma linea y si no está me retorna null
     @org.junit.jupiter.api.Test
     void get() {
-        HashTable hashTable = new HashTable();
+        ex1.HashTable hashTable = new ex1.HashTable();
         hashTable.put("2","hola");
         Assertions.assertEquals(null, hashTable.get("13"));
     }
@@ -41,7 +42,7 @@ class HashTableTest {
     @org.junit.jupiter.api.Test
     void drop() {
         //Le introduzco un valor a cada key
-        HashTable hashTable = new HashTable();
+        ex1.HashTable hashTable = new HashTable();
         hashTable.put("5","a");
         hashTable.put("16","e");
         hashTable.put("27","h");
