@@ -119,6 +119,7 @@ public class HashTable {
      */
     public void drop(String key) {
         //La key se convierte en el hash y se comprueba si hay algo dentro
+
         int hash = getHash(key);
         if(entries[hash] != null) {
             HashEntry temp = entries[hash];
